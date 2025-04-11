@@ -1,0 +1,10 @@
+{
+  "id" : "e56c049520ae4e70a6f405a4515c4d1d",
+  "name" : "Hive",
+  "type" : "catalog",
+  "properties" : {
+    "table_filters" : [ ],
+    "catalog_type" : "hive"
+  },
+  "custom_truststore" : false
+}

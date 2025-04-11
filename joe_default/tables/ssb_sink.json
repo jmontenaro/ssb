@@ -1,0 +1,39 @@
+{
+  "metadata" : {
+    "schema.5.name" : "eventTimestamp",
+    "schema.watermark.0.strategy.expr" : "`eventTimestamp` - INTERVAL '3' SECOND",
+    "properties.auto.offset.reset" : "earliest",
+    "schema.0.data-type" : "INT",
+    "schema.2.name" : "customer_name",
+    "format" : "json",
+    "schema.1.name" : "customer_id",
+    "scan.startup.mode" : "earliest-offset",
+    "schema.4.name" : "quantity",
+    "schema.1.data-type" : "INT",
+    "schema.5.metadata" : "timestamp",
+    "schema.3.data-type" : "VARCHAR(2147483647)",
+    "connector" : "kafka: Local Kafka",
+    "schema.2.data-type" : "VARCHAR(2147483647)",
+    "schema.3.name" : "item_id",
+    "properties.request.timeout.ms" : "120000",
+    "schema.watermark.0.rowtime" : "eventTimestamp",
+    "schema.watermark.0.strategy.data-type" : "TIMESTAMP(3)",
+    "properties.transaction.timeout.ms" : "900000",
+    "schema.5.virtual" : "false",
+    "topic" : "ssb-sink",
+    "schema.5.data-type" : "TIMESTAMP(3) WITH LOCAL TIME ZONE",
+    "schema.4.data-type" : "INT",
+    "schema.0.name" : "transaction_id",
+    "ssb.schema.text" : "{\n  \"type\": \"record\",\n  \"name\": \"ssb_sink\",\n  \"fields\": [\n    {\n      \"name\": \"transaction_id\",\n      \"type\": \"int\"\n    },\n    {\n      \"name\": \"customer_id\",\n      \"type\": \"int\"\n    },\n    {\n      \"name\": \"customer_name\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"item_id\",\n      \"type\": \"string\"\n    },\n    {\n      \"name\": \"quantity\",\n      \"type\": \"int\"\n    }\n  ]\n}",
+    "ssb.watermark_spec" : {
+      "timestamp_column" : "__ssb_kafka_timestamp"
+    },
+    "ssb.properties" : {
+      "auto.offset.reset" : "earliest"
+    }
+  },
+  "type" : "ssb",
+  "table_name" : "ssb_sink",
+  "transform_code_b64_encoded" : false,
+  "transform_code" : ""
+}

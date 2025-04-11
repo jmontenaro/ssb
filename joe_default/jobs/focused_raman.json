@@ -1,0 +1,89 @@
+{
+  "job_name" : "focused_raman",
+  "api_endpoints" : [ {
+    "endpoint" : "mv",
+    "dynamic_parameters" : [ ],
+    "code" : "select \"transaction_id\", \"customer_id\", \"name\", \"item_id\", \"quantity\", \"CURRENT_TIMESTAMP\" from mv_63c47514_focused_raman",
+    "bind_values" : [ ],
+    "builder_data" : {
+      "rules" : {
+        "condition" : "AND",
+        "rules" : [ ]
+      },
+      "selectedColumns" : [ {
+        "index" : 1,
+        "name" : "transaction_id",
+        "alias" : "transaction_id",
+        "expr" : null,
+        "typeName" : "INTEGER",
+        "primaryKey" : false,
+        "watermark" : false
+      }, {
+        "index" : 2,
+        "name" : "customer_id",
+        "alias" : "customer_id",
+        "expr" : null,
+        "typeName" : "INTEGER",
+        "primaryKey" : false,
+        "watermark" : false
+      }, {
+        "index" : 3,
+        "name" : "name",
+        "alias" : "name",
+        "expr" : null,
+        "typeName" : "VARCHAR",
+        "primaryKey" : false,
+        "watermark" : false
+      }, {
+        "index" : 4,
+        "name" : "item_id",
+        "alias" : "item_id",
+        "expr" : null,
+        "typeName" : "VARCHAR",
+        "primaryKey" : false,
+        "watermark" : false
+      }, {
+        "index" : 5,
+        "name" : "quantity",
+        "alias" : "quantity",
+        "expr" : null,
+        "typeName" : "INTEGER",
+        "primaryKey" : false,
+        "watermark" : false
+      }, {
+        "index" : 6,
+        "name" : "CURRENT_TIMESTAMP",
+        "alias" : "CURRENT_TIMESTAMP",
+        "expr" : null,
+        "typeName" : "TIMESTAMP_WITH_LOCAL_TIME_ZONE",
+        "primaryKey" : false,
+        "watermark" : false
+      } ]
+    }
+  } ],
+  "sql" : "INSERT INTO ssb_sink\n    SELECT\n        fake_orders.transaction_id,\n        fake_orders.customer_id,\n        customers.name,\n        fake_orders.item_id,\n        fake_orders.quantity,\n        CURRENT_TIMESTAMP\n    FROM\n        fake_orders JOIN\n        `Hive`.`ssb`.`customers` AS customers ON fake_orders.customer_id = customers.id;",
+  "mv_config" : {
+    "name" : "focused_raman",
+    "retention" : 300,
+    "min_row_retention_count" : 0,
+    "recreate" : true,
+    "key_column_name" : "CURRENT_TIMESTAMP",
+    "column_indices_disabled" : false,
+    "indexed_columns" : [ ],
+    "not_indexed_columns" : [ ],
+    "api_key" : "97f37a79-59ea-4c0b-8a2b-15ae40f31e7d",
+    "ignore_nulls" : false,
+    "require_restart" : false,
+    "batch_size" : 0,
+    "enabled" : true
+  },
+  "runtime_config" : {
+    "execution_mode" : "SESSION",
+    "parallelism" : 1,
+    "sample_interval" : 1000,
+    "sample_count" : 100,
+    "window_size" : 100,
+    "start_with_savepoint" : false,
+    "log_config" : null
+  }
+}

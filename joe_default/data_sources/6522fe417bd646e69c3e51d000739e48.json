@@ -1,0 +1,11 @@
+{
+  "id" : "6522fe417bd646e69c3e51d000739e48",
+  "name" : "CDP Kafka",
+  "type" : "kafka",
+  "properties" : {
+    "brokers" : "${ssb.env.kafka_broker}",
+    "protocol" : "sasl",
+    "mechanism" : "KERBEROS"
+  },
+  "custom_truststore" : false
+}

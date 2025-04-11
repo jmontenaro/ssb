@@ -1,0 +1,20 @@
+{
+  "metadata" : {
+    "schema.0.data-type" : "INT",
+    "schema.2.name" : "item_id",
+    "fields.customer_id.expression" : "#{number.numberBetween '0','10'}",
+    "schema.1.name" : "customer_id",
+    "fields.transaction_id.expression" : "#{number.numberBetween '100000000','999999999'}",
+    "fields.item_id.expression" : "#{numerify 'item_####'}",
+    "schema.1.data-type" : "INT",
+    "schema.3.data-type" : "INT",
+    "connector" : "faker",
+    "fields.quantity.expression" : "#{number.numberBetween '0','500'}",
+    "schema.2.data-type" : "VARCHAR(2147483647)",
+    "schema.3.name" : "quantity",
+    "schema.0.name" : "transaction_id"
+  },
+  "type" : "ssb",
+  "table_name" : "fake_orders",
+  "transform_code_b64_encoded" : false
+}

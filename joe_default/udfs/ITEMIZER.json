@@ -1,0 +1,7 @@
+{
+  "name" : "ITEMIZER",
+  "language" : "JAVASCRIPT",
+  "output_type" : "STRING",
+  "input_types" : [ "INT" ],
+  "code" : "function ITEMIZER(input){ \n   return 'Item Number: ' + input; \n}\n\nITEMIZER($p0);  // this line must exist"
+}

@@ -1,0 +1,13 @@
+{
+  "job_name" : "happy_booth",
+  "api_endpoints" : [ ],
+  "runtime_config" : {
+    "execution_mode" : "SESSION",
+    "parallelism" : 1,
+    "sample_interval" : 1000,
+    "sample_count" : 100,
+    "window_size" : 100,
+    "start_with_savepoint" : false,
+    "log_config" : null
+  }
+}
